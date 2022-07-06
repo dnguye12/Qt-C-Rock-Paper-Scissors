@@ -33,6 +33,12 @@
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Montserrat SemiBold</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>COMPUTER</string>
        </property>
@@ -79,6 +85,12 @@
      </item>
      <item>
       <widget class="QLabel" name="result">
+       <property name="font">
+        <font>
+         <family>Montserrat ExtraBold</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>TextLabel</string>
        </property>
@@ -115,6 +127,12 @@
      </item>
      <item>
       <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <family>Montserrat SemiBold</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>PLAYER</string>
        </property>

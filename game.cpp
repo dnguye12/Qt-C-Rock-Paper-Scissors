@@ -4,6 +4,9 @@
 
 #include <QDebug>
 #include <QPixmap>
+#include <stdlib.h>
+#include <time.h>
+#include <QRandomGenerator>
 
 
 Game::Game(QWidget *parent) :
@@ -52,12 +55,44 @@ void Game::sci() {
     QPixmap pm;
     pm.load(":/images/sci.png");
     ui->human->setPixmap(pm.scaled(120, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+    int i = cpuChoice();
+
+    switch(i) {
+
+    case 1:
+        ui->result->setText("It's a tie!");
+                break;
+    case 2:
+        ui->result->setText("You win!");
+        break;
+    case 3:
+        ui->result->setText("You lost!");
+        break;
+
+    }
 }
 
 void Game::paper() {
     QPixmap pm;
     pm.load(":/images/paper.png");
     ui->human->setPixmap(pm.scaled(120, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+    int i = cpuChoice();
+
+    switch(i) {
+
+    case 2:
+        ui->result->setText("It's a tie!");
+                break;
+    case 3:
+        ui->result->setText("You win!");
+        break;
+    case 1:
+        ui->result->setText("You lost!");
+        break;
+
+    }
 }
 
 void Game::rock() {
@@ -65,5 +100,42 @@ void Game::rock() {
     pm.load(":/images/rock.png");
     ui->human->setPixmap(pm.scaled(120, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
+    int i = cpuChoice();
+
+    switch(i) {
+
+    case 3:
+        ui->result->setText("It's a tie!");
+                break;
+    case 1:
+        ui->result->setText("You win!");
+        break;
+    case 2:
+        ui->result->setText("You lost!");
+        break;
+
+    }
+
+}
+
+int Game::cpuChoice() {
+    srand(time(NULL));
+
+    int i = QRandomGenerator::global()->bounded(3) + 1;
+    QPixmap pm;
+    switch(i) {
+    case 1:
+        pm.load(":/images/sci.png");
+        break;
+    case 2:
+        pm.load(":/images/paper.png");
+        break;
+    case 3:
+        pm.load(":/images/rock.png");
+        break;
+
+    }
+    ui->cpu->setPixmap(pm.scaled(120, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    return i;
 }
 

@@ -31,6 +31,8 @@ private slots:
 private:
     Ui::Game *ui;
 
+    int cpuChoice();
+
 signals:
     void chooseSci();
     void choosePaper();
