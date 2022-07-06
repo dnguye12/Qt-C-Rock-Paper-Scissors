@@ -25,9 +25,9 @@ void MainWindow::on_BtnExit_clicked()
 void MainWindow::on_BtnPlay_clicked()
 {
     Game *game = new Game();
-
+    hide();
     game->setModal(true);
     game->exec();
-    close();
+
 }
 

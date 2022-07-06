@@ -18,8 +18,23 @@ public:
 private slots:
     void on_toolButton_4_clicked();
 
+    void on_BtnPaper_clicked();
+
+    void on_BtnRock_clicked();
+
+    void on_BtnSci_clicked();
+
+    void sci();
+    void paper();
+    void rock();
+
 private:
     Ui::Game *ui;
+
+signals:
+    void chooseSci();
+    void choosePaper();
+    void chooseRock();
 };
 
 #endif // GAME_H
