@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "game.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -11,5 +13,21 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_BtnExit_clicked()
+{
+    close();
+}
+
+
+void MainWindow::on_BtnPlay_clicked()
+{
+    Game *game = new Game();
+
+    game->setModal(true);
+    game->exec();
+    close();
 }
 

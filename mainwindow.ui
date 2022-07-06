@@ -115,7 +115,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Montserrat ExtraBold</family>
+          <family>Montserrat SemiBold</family>
           <pointsize>14</pointsize>
           <bold>true</bold>
          </font>
@@ -178,7 +178,7 @@ QToolButton:hover {
         </property>
         <property name="font">
          <font>
-          <family>Montserrat ExtraBold</family>
+          <family>Montserrat SemiBold</family>
           <pointsize>14</pointsize>
          </font>
         </property>
